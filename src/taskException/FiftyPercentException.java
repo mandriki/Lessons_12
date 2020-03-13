@@ -3,26 +3,17 @@ import java.lang.*;
 public class FiftyPercentException {
     public static void main(String[] args) throws Exception {
         try{
-            Percent(1,10);
-            //throw new NullPointerException();
+            Percent();
         }
         catch (Exception e) {
-            System.out.println(e);
+            System.out.println("i = 0, ошибка: " + e);
         }
         finally {
-            System.out.println("Все четные цифры ошибка");
+            System.out.println("i не может иметь значение = 0");
         }
     }
-    public static int Percent(int i, int n) throws Exception{
-        for( i = i ; i <= n; i++) {
-            if (i % 2 != 0) {
-                System.out.print(i);
-            } else
-                 {
-                    System.out.println(i);
-//                    throw new NullPointerException();
-                }
-        }
-        return i;
-    }
+    public static void Percent() throws Exception{
+            int i = (int) (Math.random() * 2);
+            if (i == 0){throw new NullPointerException();}
+           }
 }
